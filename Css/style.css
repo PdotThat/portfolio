@@ -1,7 +1,7 @@
 /* =========================================================
-   Phatpicha · Portfolio — Space Theme v2
-   เปลี่ยนแปลงหลัก: สีเข้มขึ้นมาก · ดวงอาทิตย์ใหญ่ขึ้น ·
-   ดาวกดได้ (แก้ pointer-events) · เพิ่ม Lightbox กดขยายรูป
+   Phatpicha · Portfolio — Space Theme v3
+   โครงสร้าง สี และการจัดวางเดิมทั้งหมด
+   เพิ่มเข้ามา: Carousel เลื่อนรูป · แถบสถิติ · ไอคอนรางวัล
    ========================================================= */
 
 :root{
@@ -69,16 +69,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 
 /* solar system */
 .solar{position:relative;width:min(48vw,520px);height:min(48vw,520px);justify-self:center;order:2}
-/* ⭐ ดวงอาทิตย์ = รูปโปรไฟล์ ใหญ่ขึ้น */
 .sun{position:absolute;inset:0;margin:auto;width:190px;height:190px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#FFE9A8,var(--gold) 55%,#B67B1E);
   box-shadow:0 0 46px rgba(245,194,66,.5),0 0 130px rgba(245,194,66,.22);
   display:flex;align-items:center;justify-content:center;overflow:hidden}
 .sun img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 
-/* ⭐ แก้บั๊กดาวกดไม่ได้:
-   วงโคจรชั้นนอกเป็นวงกลมเต็มพื้นที่ ทับดาวของวงชั้นใน
-   จึงปิด pointer-events ที่วงโคจร แล้วเปิดเฉพาะที่ตัวดาว */
 .orbit{position:absolute;inset:0;margin:auto;border:1px dashed rgba(255,255,255,.13);border-radius:50%;animation:spin linear infinite;pointer-events:none}
 .planet{pointer-events:auto}
 
@@ -123,6 +119,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 .photo-slot{display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;min-height:280px}
 .photo-slot img{width:100%;height:100%;object-fit:cover;border-radius:16px}
 
+/* ===== STAT ROW (ใหม่) ===== */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:20px}
+.stat{padding:18px 20px;text-align:center}
+.stat b{display:block;font-size:1.9rem;font-weight:500;line-height:1.2;
+  background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{display:block;color:var(--muted);font-size:.8rem;margin-top:4px}
+
 /* ===== TIMELINE ===== */
 .timeline{position:relative;padding-left:28px}
 .timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--cyan),var(--violet))}
@@ -137,9 +140,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 /* ===== AWARDS ===== */
 .award{display:grid;grid-template-columns:52px 1fr;gap:16px;margin-bottom:14px}
 .award.win{border-color:rgba(245,194,66,.45);box-shadow:0 0 30px rgba(245,194,66,.07)}
-.award .ic{font-size:1.7rem;line-height:1.2}
+.award .ic{font-size:1.5rem;line-height:1.4;color:var(--violet);text-align:center}
+.award.win .ic{color:var(--gold);text-shadow:0 0 16px rgba(245,194,66,.6)}
 .award h3{font-size:1.05rem}
 .award p{color:var(--muted);font-size:.92rem;margin-top:4px}
+.award p b{color:var(--ink);font-weight:600}
 .award .when{font-size:.72rem;color:var(--gold);margin-top:8px;letter-spacing:.1em}
 .award-img{border-radius:10px;margin-top:12px;max-width:520px;display:block}
 
@@ -161,7 +166,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 .dot.red{background:var(--red)}.dot.gold{background:var(--gold)}.dot.blue{background:var(--violet)}
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
 .cert{position:relative;padding:16px 18px}
-.cert b{display:block;font-size:.93rem;padding-right:66px}
+.cert b{display:block;font-size:.93rem;padding-right:78px}
 .cert > span{color:var(--muted);font-size:.82rem}
 .cert .vf{position:absolute;top:15px;right:15px;font-size:.6rem;color:var(--cyan);letter-spacing:.08em;opacity:.8}
 .img-slot{margin-top:12px;border-radius:10px;overflow:hidden}
@@ -192,6 +197,69 @@ section img, .award-img{cursor:zoom-in}
 #lightbox .lb-close{position:absolute;top:18px;right:26px;color:#fff;font-size:1.6rem;cursor:pointer;opacity:.7}
 #lightbox .lb-close:hover{opacity:1}
 
+/* ===== CAROUSEL (ใหม่) ===== */
+.carousel-container{
+  position:relative;
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  border-radius:16px 16px 0 0;   /* การ์ดโปรเจกต์: โค้งเฉพาะขอบบน */
+  background:rgba(255,255,255,.02);
+}
+/* อยู่ในการ์ดรางวัลที่มี padding อยู่แล้ว → โค้งทุกมุม */
+.carousel-container.in-award{
+  border-radius:12px;
+  margin-top:14px;
+  max-width:560px;
+  height:280px;
+  border:1px solid var(--line);
+}
+.carousel-slide{display:none;width:100%;height:100%}
+.carousel-slide.active{display:block;animation:fadeSlide .4s ease-in-out}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
+
+.prev-btn,.next-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(3,3,9,.65);
+  color:var(--cyan);
+  border:1px solid var(--line);
+  padding:8px 13px;
+  cursor:pointer;
+  border-radius:8px;
+  font-size:1rem;
+  line-height:1;
+  backdrop-filter:blur(4px);
+  transition:background .2s,color .2s,border-color .2s;
+  z-index:10;
+}
+.prev-btn{left:8px}
+.next-btn{right:8px}
+.prev-btn:hover,.next-btn:hover,
+.prev-btn:focus-visible,.next-btn:focus-visible{
+  background:var(--cyan);
+  color:var(--space);
+  border-color:var(--cyan);
+  outline:none;
+}
+.carousel-count{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  background:rgba(3,3,9,.72);
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:.66rem;
+  letter-spacing:.08em;
+  padding:3px 9px;
+  border-radius:999px;
+  backdrop-filter:blur(4px);
+  z-index:10;
+  pointer-events:none;
+}
+@keyframes fadeSlide{from{opacity:.4}to{opacity:1}}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width:840px){
   .hero-space{grid-template-columns:1fr;text-align:center;padding-top:110px}
@@ -199,9 +267,13 @@ section img, .award-img{cursor:zoom-in}
   .sun{width:150px;height:150px}
   .hero-cta{justify-content:center}
   .about-grid{grid-template-columns:1fr}
+  .award{grid-template-columns:1fr;gap:8px}
+  .award .ic{text-align:left}
+  .carousel-container.in-award{height:220px;max-width:none}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .orbit,.planet span,.scroll-hint{animation:none}
   .reveal{opacity:1;transform:none;transition:none}
+  .carousel-slide.active{animation:none}
 }
