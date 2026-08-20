@@ -148,7 +148,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 
 /* ===== AWARDS ===== */
 .award{display:grid;grid-template-columns:52px 1fr;gap:16px;margin-bottom:14px}
-.award-body{width:100%;min-width:0}
+.award-body{width:100%;min-width:0;max-width:100%;overflow:hidden}
 .award.win{border-color:rgba(245,194,66,.45);box-shadow:0 0 30px rgba(245,194,66,.07)}
 .award .ic{font-size:1.5rem;line-height:1.4;color:var(--violet);text-align:center}
 .award.win .ic{color:var(--gold);text-shadow:0 0 16px rgba(245,194,66,.6)}
@@ -211,6 +211,7 @@ section img, .award-img{cursor:zoom-in}
 .carousel-container{
   position:relative;
   width:100%;
+  max-width:100%;
   min-width:0;
   height:220px;
   overflow:hidden;
@@ -222,14 +223,15 @@ section img, .award-img{cursor:zoom-in}
   border-radius:12px;
   margin-top:14px;
   width:100%;
-  max-width:none;
+  max-width:100%;
+  min-width:0;
   height:auto;
   aspect-ratio:16/9;
   border:1px solid var(--line);
 }
-.carousel-slide{display:none;width:100%;min-width:0;height:100%}
+.carousel-slide{display:none;width:100%;max-width:100%;min-width:0;height:100%}
 .carousel-slide.active{display:block;animation:fadeSlide .4s ease-in-out}
-.carousel-slide img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
+.carousel-slide img{width:100%;max-width:100%;min-width:0;height:100%;object-fit:cover;cursor:zoom-in;display:block}
 
 .prev-btn,.next-btn{
   position:absolute;
@@ -291,8 +293,8 @@ section img, .award-img{cursor:zoom-in}
   .about-grid{grid-template-columns:1fr}
   .award{grid-template-columns:1fr;gap:8px}
   .award .ic{text-align:left}
-  .carousel-container.in-award{height:220px;max-width:none}
-  .award-img{width:100%;max-width:none;height:220px;object-fit:cover}
+  .carousel-container.in-award{height:220px;max-width:100%}
+  .award-img{width:100%;max-width:100%;height:220px;object-fit:cover}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
