@@ -15,6 +15,8 @@
   --violet:#8A7CFF;
   --gold:#F5C242;
   --red:#FF5C7A;
+  --blue:#4EA8FF;
+  --green:#6FE58B;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -78,26 +80,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 .orbit{position:absolute;inset:0;margin:auto;border:1px dashed rgba(255,255,255,.13);border-radius:50%;animation:spin linear infinite;pointer-events:none}
 .planet{pointer-events:auto}
 
-.o1{width:46%;height:46%;animation-duration:16s}
-.o2{width:64%;height:64%;animation-duration:24s}
-.o3{width:82%;height:82%;animation-duration:34s}
-.o4{width:100%;height:100%;animation-duration:46s}
+.o1{width:38%;height:38%;animation-duration:14s}
+.o2{width:52%;height:52%;animation-duration:20s}
+.o3{width:66%;height:66%;animation-duration:27s}
+.o4{width:80%;height:80%;animation-duration:35s}
+.o5{width:90%;height:90%;animation-duration:44s}
+.o6{width:100%;height:100%;animation-duration:54s}
 @keyframes spin{to{transform:rotate(360deg)}}
 .planet{position:absolute;top:-15px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;z-index:5}
 .planet i{width:28px;height:28px;border-radius:50%;display:block;transition:transform .2s}
 .planet span{font-family:'IBM Plex Mono',monospace;font-size:.64rem;color:var(--muted);letter-spacing:.08em;background:rgba(3,3,9,.85);padding:2px 8px;border-radius:6px;animation:counter linear infinite}
-.o1 .planet span{animation-duration:16s}
-.o2 .planet span{animation-duration:24s}
-.o3 .planet span{animation-duration:34s}
-.o4 .planet span{animation-duration:46s}
+.o1 .planet span{animation-duration:14s}
+.o2 .planet span{animation-duration:20s}
+.o3 .planet span{animation-duration:27s}
+.o4 .planet span{animation-duration:35s}
+.o5 .planet span{animation-duration:44s}
+.o6 .planet span{animation-duration:54s}
 @keyframes counter{to{transform:rotate(-360deg)}}
 .planet:hover i,.planet:focus-visible i{transform:scale(1.4)}
 .planet:hover span,.planet:focus-visible span{color:#fff}
 .planet:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;border-radius:8px}
 .p1 i{background:radial-gradient(circle at 30% 30%,#B7F5EA,var(--cyan) 60%,#177E6C);box-shadow:0 0 14px rgba(94,230,208,.6)}
 .p2 i{background:radial-gradient(circle at 30% 30%,#FFD9A8,var(--gold) 60%,#8F5B12);box-shadow:0 0 14px rgba(245,194,66,.6)}
-.p3 i{background:radial-gradient(circle at 30% 30%,#CFC6FF,var(--violet) 60%,#4636B8);box-shadow:0 0 14px rgba(138,124,255,.6)}
+.p3 i{background:radial-gradient(circle at 30% 30%,#C7E4FF,var(--blue) 60%,#1C5FA8);box-shadow:0 0 14px rgba(78,168,255,.6)}
 .p4 i{background:radial-gradient(circle at 30% 30%,#FFC1CE,var(--red) 60%,#A32444);box-shadow:0 0 14px rgba(255,92,122,.6)}
+.p5 i{background:radial-gradient(circle at 30% 30%,#CFC6FF,var(--violet) 60%,#4636B8);box-shadow:0 0 14px rgba(138,124,255,.6)}
+.p6 i{background:radial-gradient(circle at 30% 30%,#CFF7DA,var(--green) 60%,#2E9A54);box-shadow:0 0 14px rgba(111,229,139,.6)}
 .scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.7rem;letter-spacing:.25em;animation:bob 2s ease-in-out infinite}
 @keyframes bob{50%{transform:translate(-50%,6px)}}
 

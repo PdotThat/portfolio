@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | Phatpicha</title>
+<meta name="description" content="Portfolio of Phatpicha Thatchakornkunlawat — Computer Science student specializing in Cybersecurity, Cloud & AI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div id="loader">
+  <div class="loader-name">
+    <span>P</span><span>H</span><span>A</span><span>T</span><span>P</span><span>I</span><span>C</span><span>H</span><span>A</span>
+  </div>
+  <div class="loader-pct mono">Loading <b id="pct">0</b>%</div>
+</div>
+
+<!-- ================= STARFIELD ================= -->
+<canvas id="stars"></canvas>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="nav-in">
+    <a href="#home" class="brand">PORTFOLIO <span class="brand-sep">|</span> Phatpicha</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#activities">Activities & Contributions</a>
+      <a href="#certs">Certifications</a>
+      <a href="#experience">Work Experience</a>
+      <a href="#skills">Technical Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO / SOLAR SYSTEM ================= -->
+<section id="home" class="hero-space">
+  <div class="solar">
+    <!-- sun = profile -->
+    <div class="sun">
+      <img src="Images/profile.jpg" alt="Phatpicha Thatchakornkunlawat">
+    </div>
+    <!-- orbits with clickable planets -->
+    <div class="orbit o1"><a class="planet p1" href="#about"><i></i><span>About</span></a></div>
+    <div class="orbit o2"><a class="planet p2" href="#projects"><i></i><span>Projects</span></a></div>
+    <div class="orbit o3"><a class="planet p3" href="#activities"><i></i><span>Activities</span></a></div>
+    <div class="orbit o4"><a class="planet p4" href="#certs"><i></i><span>Certs</span></a></div>
+    <div class="orbit o5"><a class="planet p5" href="#experience"><i></i><span>Experience</span></a></div>
+    <div class="orbit o6"><a class="planet p6" href="#skills"><i></i><span>Skills</span></a></div>
+  </div>
+
+  <div class="hero-copy">
+    <h1>Phatpicha<br>Thatchakornkunlawat</h1>
+    <p class="role">Computer Science Student · <b>Cybersecurity</b> &amp; <b>Cloud</b></p>
+    <div class="hero-cta">
+      <a href="#about" class="btn solid">Select Portfolio ↓</a>
+      <a href="https://github.com/PdotThat" target="_blank" rel="noopener" class="btn ghost">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/phatpicha-thatchakornkunlawat-705a15408/" target="_blank" rel="noopener" class="btn ghost">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="scroll-hint mono">SCROLL ▼</div>
+</section>
+
+<!-- ================= 01 ABOUT ME ================= -->
+<section id="about" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">01</span><h2>About Me</h2></div>
+    <div class="about-grid">
+      <div class="glass">
+        <p>Hello! My name is Phatpicha Thatchakornkunlawat. I am a Computer Science student with a strong passion for Cybersecurity and Cloud Infrastructure. I have practical experience in Capture The Flag (CTF) competitions, network forensics, and building edge-to-cloud IoT security systems.</p>
+        <p style="margin-top:12px">Currently, I am expanding my knowledge in Cloud computing and aim to further develop my career in this growing field. As I build my foundational knowledge, I am actively preparing for the <strong>AWS Certified Solutions Architect – Associate (SAA-C03)</strong> exam to solidify my skills in designing secure and scalable cloud environments.</p>
+        <p style="margin-top:16px"><b>Bangkok University (BU)</b><br>
+        Bachelor of Science in Computer Science<br>
+        School of Information Technology and Innovation<br>
+        Concentration in Data Science and Cybersecurity</p>
+        <span class="badge mono" style="margin-top:8px;">GPA: 3.44</span>
+      </div>
+      <div class="glass photo-slot">
+        <img src="Images/profile.jpg" alt="Phatpicha Thatchakornkunlawat">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 PROJECTS ================= -->
+<section id="projects" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">02</span><h2>Projects</h2></div>
+    <div class="proj-grid">
+
+      <!-- Aegis -->
+      <article class="glass proj">
+        <div class="proj-body">
+          <h3>Aegis — Detect · Enrich · Respond</h3>
+          <p><strong>Technologies / Tools:</strong> Git, Teamwork</p>
+          <p><strong>My Role / Contribution:</strong> Developer / Team Member</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Collaborative team project "Aegis" — managing shared configurations and working together through a Git workflow to practice security event monitoring.</p>
+          <a class="chip proj-link" href="https://github.com/vorakitz/aegis-team" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Smart SOC -->
+      <article class="glass proj">
+        <div class="proj-body">
+          <h3>Smart SOC &amp; Data Center Management</h3>
+          <p><strong>Technologies / Tools:</strong> ESP32, C++, IoT, RFID, Sensors (MQ-2, PIR), Blynk, LINE Notify</p>
+          <p><strong>My Role / Contribution:</strong> IoT &amp; Security Developer</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Developed an edge-to-cloud IoT security system using ESP32. Integrated RFID access control, MQ-2 smoke detection, and PIR intrusion alerts with real-time LINE Notify synchronization and a Blynk web dashboard.</p>
+          <a class="chip proj-link" href="https://github.com/STARoM00N/Smart_SOC" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Smart Parking -->
+      <article class="glass proj">
+        <div class="proj-body">
+          <h3>Smart Parking Lot Management System</h3>
+          <p><strong>Technologies / Tools:</strong> ESP32, C++, Hardware, IR &amp; Ultrasonic Sensors</p>
+          <p><strong>My Role / Contribution:</strong> IoT Developer</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Engineered a smart parking prototype utilizing IR and ultrasonic sensors for real-time occupancy tracking and collision warning, managed via a custom event-driven architecture on ESP32.</p>
+          <a class="chip proj-link" href="https://github.com/PdotThat" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- AWS Portfolio -->
+      <article class="glass proj">
+        <div class="proj-body">
+          <h3 style="color:var(--cyan);">Secure Static Portfolio on AWS</h3>
+          <p><strong>Status:</strong> <span class="mono" style="color:var(--gold);">IN PROGRESS</span></p>
+          <p><strong>Technologies / Tools:</strong> AWS S3, CloudFront, OAC, HTTPS, HTML/CSS/JS</p>
+          <p><strong>My Role / Contribution:</strong> Cloud Architect / Developer</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Migrating a static portfolio website from GitHub Pages to AWS. The architecture utilizes Amazon S3 for storage and Amazon CloudFront for content delivery, enforcing HTTPS and Origin Access Control (OAC) for secure, least-privilege access.</p>
+        </div>
+      </article>
+
+      <!-- Web Projects -->
+      <article class="glass proj">
+        <div class="proj-body">
+          <h3>Website Projects (Coursera)</h3>
+          <p><strong>Technologies / Tools:</strong> HTML, CSS, JavaScript, WordPress</p>
+          <p><strong>My Role / Contribution:</strong> Web Developer</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Built full websites with WordPress and developed responsive static websites with HTML, CSS, and JavaScript designed for all screen sizes.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 ACTIVITIES & CONTRIBUTIONS ================= -->
+<section id="activities" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">03</span><h2>Activities &amp; Contributions</h2></div>
+
+    <!-- AI Mini Hackathon -->
+    <div class="glass award win">
+      <div class="ic">★</div>
+      <div style="width:100%;">
+        <h3>AI Spark Award — AI Mini Hackathon 2026</h3>
+        <p><strong>Date:</strong> 21 May 2026</p>
+        <p><strong>Role:</strong> Participant / Team Member</p>
+        <p><strong>Award:</strong> AI Spark Award (Winner)</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> "Solving Real-World Problems" at IT Empowering Day 2026 — organized by the School of Information Technology and Innovation, Bangkok University. Our team <b>DUM</b> designed and pitched <b>Aegis</b>, an AI-powered real-time security platform for sovereign GPU cloud, from problem framing to the final stage pitch.</p>
+        
+        <div class="carousel-container in-award" style="margin-top:16px;">
+          <div class="carousel-slide active"><img src="Images/aihack-05-award.jpg" alt="Receiving the AI Spark Award on stage" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/aihack-03-aegis-pitch.jpg" alt="Team DUM pitching project Aegis" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/aihack-02-pitch-stats.jpg" alt="Presenting threat statistics on stage" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/aihack-04-team-qa.jpg" alt="Team answering questions from the judges" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/aihack-01-venue.jpg" alt="AI Mini Hackathon competition room" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/aihack-06-cert.jpg" alt="AI Spark Award certificate" loading="lazy" decoding="async"></div>
+          <button class="prev-btn" type="button" aria-label="Previous photo" onclick="moveSlide(-1, this)">&#10094;</button>
+          <button class="next-btn" type="button" aria-label="Next photo" onclick="moveSlide(1, this)">&#10095;</button>
+          <span class="carousel-count mono"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BU Mini CTF -->
+    <div class="glass award">
+      <div class="ic">◆</div>
+      <div style="width:100%;">
+        <h3>BU Mini CTF Competition 2026</h3>
+        <p><strong>Date:</strong> 10 Feb 2026</p>
+        <p><strong>Role:</strong> Team "OVERWORLD-SKELETON"</p>
+        <p><strong>Award:</strong> 3rd Place</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> BU Cyber Fortress Challenge &amp; Career Expo, hosted on TryHackMe as a 700-minute team room. Finished <b>3rd out of 39 competitors</b> with 2,560 points, solving jeopardy-style challenges across web, forensics and Linux privilege escalation.</p>
+        
+        <div class="carousel-container in-award" style="margin-top:16px;">
+          <div class="carousel-slide active"><img src="Images/buctf-01-team.jpg" alt="Team OVERWORLD-SKELETON during the CTF" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/buctf-03-scoreboard.jpg" alt="TryHackMe scoreboard showing OverworldSkeleton at 2560 points" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/buctf-05-ceremony.jpg" alt="BU Hackathon 2026 final round award ceremony" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/buctf-04-cert.jpg" alt="BU Mini CTF Competition 2026 certificate" loading="lazy" decoding="async"></div>
+          <button class="prev-btn" type="button" aria-label="Previous photo" onclick="moveSlide(-1, this)">&#10094;</button>
+          <button class="next-btn" type="button" aria-label="Next photo" onclick="moveSlide(1, this)">&#10095;</button>
+          <span class="carousel-count mono"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IT RERU Hackathon -->
+    <div class="glass award">
+      <div class="ic">◆</div>
+      <div style="width:100%;">
+        <h3>IT RERU Cyber Hackathon 2026 #2</h3>
+        <p><strong>Date:</strong> 30–31 July 2026</p>
+        <p><strong>Role:</strong> Senior Category Participant (Team "DUM")</p>
+        <p><strong>Award:</strong> 4th Place (Senior Category)</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> Two-day inter-university hackathon at Roi Et Rajabhat University, organized by the Faculty of Information Technology together with NCSA. Competing in the Senior bracket against <b>14 teams (42 players)</b>, we finished <b>4th with 1,700 points</b>, working through CTFd challenges on practical vulnerabilities and penetration testing.</p>
+
+        <div class="carousel-container in-award" style="margin-top:16px;">
+          <div class="carousel-slide active"><img src="Images/reru-02-team-table.jpg" alt="Team competing at IT RERU Cyber Hackathon" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-04-teamwork.jpg" alt="Team solving a challenge together" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-03-ctfd-arena.jpg" alt="Competition arena with the CTFd platform on screen" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-05-focus.jpg" alt="Working through a challenge with the scoreboard behind" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-07-scoreboard.jpg" alt="Senior category scoreboard, 14 teams and 42 players" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-01-register.jpg" alt="Registration desk on competition day" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-08-group.jpg" alt="Group photo at the award ceremony" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/reru-09-cert.jpg" alt="IT RERU Cyber Hackathon 2026 certificate" loading="lazy" decoding="async"></div>
+          <button class="prev-btn" type="button" aria-label="Previous photo" onclick="moveSlide(-1, this)">&#10094;</button>
+          <button class="next-btn" type="button" aria-label="Next photo" onclick="moveSlide(1, this)">&#10095;</button>
+          <span class="carousel-count mono"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NCSA AI CTF -->
+    <div class="glass award">
+      <div class="ic">◆</div>
+      <div style="width:100%;">
+        <h3>NCSA AI CTF Thailand Tournament 2026</h3>
+        <p><strong>Date:</strong> 28 March 2026</p>
+        <p><strong>Role:</strong> Team "No Gravity"</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> National AI-focused Capture The Flag tournament run by the National Cyber Security Agency (NCSA) with THNCA and industry partners including CrowdStrike, F5, KBTG, MFEC and CyCraft.</p>
+        <img src="Images/cert-ncsa-ai-ctf.jpg" class="award-img" alt="NCSA AI CTF Thailand Tournament 2026 certificate" loading="lazy" decoding="async" style="margin-top:16px;">
+      </div>
+    </div>
+
+    <!-- NCSA Boot Camp -->
+    <div class="glass award">
+      <div class="ic">◆</div>
+      <div style="width:100%;">
+        <h3>NCSA CTF Boot Camp (1st Cohort)</h3>
+        <p><strong>Date:</strong> 23–24 May 2026</p>
+        <p><strong>Role:</strong> Participant</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> Two-day hands-on workshop by the Thailand National Cyber Academy (THNCA) at Mida Hotel, Don Mueang — practical CTF technique training and career guidance in cyber security.</p>
+
+        <div class="carousel-container in-award" style="margin-top:16px;">
+          <div class="carousel-slide active"><img src="Images/bootcamp-01-ceremony.jpg" alt="With the Secretary General of NCSA at the boot camp" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/bootcamp-02-workshop.jpg" alt="Working through boot camp exercises" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/bootcamp-03-hands-on.jpg" alt="Hands-on lab session with teammates" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/bootcamp-04-cert.jpg" alt="NCSA CTF Boot Camp certificate" loading="lazy" decoding="async"></div>
+          <button class="prev-btn" type="button" aria-label="Previous photo" onclick="moveSlide(-1, this)">&#10094;</button>
+          <button class="next-btn" type="button" aria-label="Next photo" onclick="moveSlide(1, this)">&#10095;</button>
+          <span class="carousel-count mono"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NextGen Tech -->
+    <div class="glass award">
+      <div class="ic">◆</div>
+      <div style="width:100%;">
+        <h3>NextGen Tech "UnlockYourFuture"</h3>
+        <p><strong>Date:</strong> 8 May 2026</p>
+        <p><strong>Role:</strong> Participant</p>
+        <p style="margin-top:8px;"><strong>Description:</strong> Industry seminar at Thai-Nichi Institute of Technology run with MFEC, Boswell Digital and Google, covering AIoT and smart solutions and how they are built in practice.</p>
+
+        <div class="carousel-container in-award" style="margin-top:16px;">
+          <div class="carousel-slide active"><img src="Images/nextgen-01-venue.jpg" alt="NextGen Tech seminar hall" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/nextgen-04-speakers.jpg" alt="Industry speakers at the session" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/nextgen-05-group.jpg" alt="Closing group photo" loading="lazy" decoding="async"></div>
+          <div class="carousel-slide"><img src="Images/nextgen-06-cert.jpg" alt="NextGen Tech UnlockYourFuture certificate" loading="lazy" decoding="async"></div>
+          <button class="prev-btn" type="button" aria-label="Previous photo" onclick="moveSlide(-1, this)">&#10094;</button>
+          <button class="next-btn" type="button" aria-label="Next photo" onclick="moveSlide(1, this)">&#10095;</button>
+          <span class="carousel-count mono"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 04 CERTIFICATES ================= -->
+<section id="certs" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">04</span><h2>Certifications</h2></div>
+
+    <h3 class="cert-cat"><span class="dot red"></span>Cybersecurity</h3>
+    <div class="cert-grid">
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Ethical Hacker</b><span>Cisco Networking Academy · Jun 2026</span>
+        <div class="img-slot"><img src="Images/cert-cisco-ethical-hacker.jpg" alt="Cisco Ethical Hacker certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Penetration Test (28 hrs)</b><span>NCSA e-Learning · Apr 2026</span>
+        <div class="img-slot"><img src="Images/cert-ncsa-pentest.jpg" alt="NCSA Penetration Test certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Cyber Security 101 (45 hrs)</b><span>TryHackMe · Apr 2026</span>
+        <div class="img-slot"><img src="Images/cert-thm-cs101.jpg" alt="TryHackMe Cyber Security 101 certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Pre Security (19 hrs)</b><span>TryHackMe · Feb 2026</span>
+        <div class="img-slot"><img src="Images/cert-thm-pre-security.jpg" alt="TryHackMe Pre Security certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Basic Cybersecurity</b><span>MOOC by SECPLAYGROUND · 2026</span>
+        <div class="img-slot"><img src="Images/cert-ncsa-mooc-basic.jpg" alt="Basic Cybersecurity certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Cybersecurity Foundation (21 hrs)</b><span>NCSA e-Learning · Oct 2025</span>
+        <div class="img-slot"><img src="Images/cert-ncsa-foundation.jpg" alt="NCSA Cybersecurity Foundation certificate" loading="lazy" decoding="async"></div></div>
+    </div>
+
+    <h3 class="cert-cat"><span class="dot gold"></span>Cloud &amp; AI</h3>
+    <div class="cert-grid">
+      <div class="glass cert"><span class="vf mono" style="color:var(--gold);">IN PROGRESS</span><b style="color:var(--gold);">AWS Certified Solutions Architect – Associate (SAA-C03)</b><span>Amazon Web Services · expected Oct 2026</span></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Machine Learning for NLP (20 hrs)</b><span>AWS Academy Graduate · Apr 2026</span>
+        <div class="img-slot"><img src="Images/cert-aws-ml-nlp.jpg" alt="AWS Academy Machine Learning for NLP certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Generative AI Foundations (12 hrs)</b><span>AWS Academy Graduate · Apr 2026</span>
+        <div class="img-slot"><img src="Images/cert-aws-genai.jpg" alt="AWS Academy Generative AI Foundations certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Machine Learning Foundations (20 hrs)</b><span>AWS Academy Graduate · Feb 2026</span>
+        <div class="img-slot"><img src="Images/cert-aws-ml-foundations.jpg" alt="AWS Academy Machine Learning Foundations certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>AWS Cloud Practitioner Essentials</b><span>AWS Training &amp; Certification · Oct 2025</span>
+        <div class="img-slot"><img src="Images/cert-aws-cloud-practitioner.jpg" alt="AWS Cloud Practitioner Essentials certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Amazon Q — Generative AI Assistant Learning Plan</b><span>AWS Training &amp; Certification · Oct 2025</span>
+        <div class="img-slot"><img src="Images/cert-amazon-q.jpg" alt="Amazon Q Learning Plan certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>AI Governance &amp; Ethics</b><span>Thailand Digital Government Academy (TDGA) · Nov 2025</span>
+        <div class="img-slot"><img src="Images/cert-tdga-ai-governance.jpg" alt="TDGA AI Governance and Ethics certificate" loading="lazy" decoding="async"></div></div>
+    </div>
+
+    <h3 class="cert-cat"><span class="dot blue"></span>Web Development</h3>
+    <div class="cert-grid">
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Responsive Website Basics: HTML, CSS, JavaScript</b><span>University of London · Coursera · Oct 2024</span>
+        <div class="img-slot"><img src="Images/cert-uol-responsive-web.jpg" alt="University of London Responsive Website Basics certificate" loading="lazy" decoding="async"></div></div>
+      <div class="glass cert"><span class="vf mono">VERIFIED</span><b>Build a Full Website using WordPress</b><span>Coursera Project Network · Nov 2024</span>
+        <div class="img-slot"><img src="Images/cert-wordpress.jpg" alt="Build a Full Website using WordPress certificate" loading="lazy" decoding="async"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 WORK EXPERIENCE ================= -->
+<section id="experience" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">05</span><h2>Work Experience</h2></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="glass">
+          <span class="tl-when mono">INTERNSHIP · 3 MONTHS</span>
+          <h3>Purchasing Department Intern</h3>
+          <p style="color:var(--cyan); font-weight:500;">Z-Tech Auto Parts Co., Ltd.</p>
+          <div style="margin-top:10px; color:var(--muted); font-size:0.92rem;">
+            <strong>Responsibilities:</strong>
+            <ul style="margin-left:20px; margin-top:4px;">
+              <li>Data entry &amp; stock management</li>
+              <li>Pre-delivery product inspection</li>
+              <li>Production planning coordination</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 TECHNICAL SKILLS ================= -->
+<section id="skills" class="panel">
+  <div class="wrap reveal">
+    <div class="sec-head"><span class="mono sec-no">06</span><h2>Technical Skills</h2></div>
+
+    <div class="skill-row">
+      <div class="chips">
+        <span class="skill">Python (Basic)</span>
+        <span class="skill">C++ (Basic)</span>
+        <span class="skill">TypeScript (Basic)</span>
+        <span class="skill">HTML/CSS/JavaScript (Basic)</span>
+        <span class="skill">AWS S3 &amp; CloudFront (Basic)</span>
+        <span class="skill">CTF / TryHackMe (Basic)</span>
+        <span class="skill">ESP32 / Arduino (Basic)</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Tools</h3>
+      <div class="chips">
+        <span class="skill">Linux (Basic)</span>
+        <span class="skill">Figma</span>
+        <span class="skill">Canva</span>
+        <span class="skill">Microsoft Excel</span>
+        <span class="skill">Word</span>
+        <span class="skill">PowerPoint</span>
+      </div>
+    </div>
+
+    <div class="skill-row" style="margin-top:28px;">
+      <h3>Soft Skills</h3>
+      <div class="chips">
+        <span class="skill" style="border-color:var(--violet);">Teamwork</span>
+        <span class="skill" style="border-color:var(--violet);">Communication &amp; Coordination</span>
+        <span class="skill" style="border-color:var(--violet);">Time Management</span>
+        <span class="skill" style="border-color:var(--violet);">Presenting &amp; Pitching</span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <h3>Languages</h3>
+      <div class="chips">
+        <span class="skill">Thai (Native)</span>
+        <span class="skill">English (Basic)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<footer id="contact">
+  <div class="wrap reveal">
+    <h2 class="foot-title">Let's Connect</h2>
+    <p>Thank you for viewing my portfolio. Please feel free to reach out.</p>
+    <div class="links">
+      <a class="chip" href="mailto:Phatpicha.that@bumail.net">Phatpicha.that@bumail.net</a>
+      <a class="chip" href="https://www.linkedin.com/in/phatpicha-thatchakornkunlawat-705a15408/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="chip" href="https://github.com/PdotThat" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="credit mono">PHATPICHA THATCHAKORNKUNLAWAT · PORTFOLIO · 2026</div>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox"><img src="" alt=""><span class="lb-close">✕</span></div>
+
+<script src="Js/main.js"></script>
+</body>
+</html>
