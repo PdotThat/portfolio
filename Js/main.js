@@ -76,6 +76,25 @@
   else { requestAnimationFrame(draw); }
 })();
 
+// ---------- 2b) MOBILE NAV TOGGLE ----------
+(function () {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (!toggle || !links) return;
+
+  function closeMenu() {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  links.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+})();
+
 // ---------- 3) SCROLL REVEAL ----------
 (function () {
   const items = document.querySelectorAll('.reveal');
