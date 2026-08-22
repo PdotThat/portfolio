@@ -169,6 +169,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
 .tags span{border:1px solid var(--line);color:var(--cyan);border-radius:999px;padding:3px 12px;font-size:.72rem;font-family:'IBM Plex Mono',monospace}
 .proj-link{margin-top:14px;display:inline-block}
+.proj-links{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.proj-links .proj-link{margin-top:0}
 
 /* ===== CERTIFICATES ===== */
 .cert-cat{font-size:1.02rem;margin:30px 0 14px;display:flex;align-items:center;gap:10px}
