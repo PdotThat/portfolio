@@ -109,27 +109,55 @@
   items.forEach((el) => io.observe(el));
 })();
 
-// ---------- 4) LIGHTBOX (กดรูปเพื่อขยาย) ----------
+// ---------- 4) LIGHTBOX (กดรูปเพื่อขยาย / กดวิดีโอเพื่อดูในหน้าเดียวกัน) ----------
 (function () {
   const lb = document.getElementById('lightbox');
   if (!lb) return;
   const lbImg = lb.querySelector('img');
+  const lbVideo = document.getElementById('lb-video');
+
+  function openImage(src, alt) {
+    lbVideo.pause();
+    lbVideo.removeAttribute('src');
+    lbVideo.style.display = 'none';
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lbImg.style.display = 'block';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';   // ล็อกสกอลล์ตอนเปิด
+  }
+
+  function openVideo(src) {
+    lbImg.style.display = 'none';
+    lbVideo.style.display = 'block';
+    lbVideo.src = src;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbVideo.play().catch(() => {});
+  }
 
   // ดักจับรูปทั้งหมดใน panel (รวมรูปในสไลด์) ยกเว้นรูปดวงอาทิตย์ตรง hero
   const imgs = document.querySelectorAll('.panel img');
   imgs.forEach((img) => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      lbImg.alt = img.alt || '';
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';   // ล็อกสกอลล์ตอนเปิด
+    img.addEventListener('click', () => openImage(img.src, img.alt));
+  });
+
+  // ดักจับลิงก์วิดีโอ ให้เปิดดูในหน้าเดียวกันแทนที่จะเด้งไปแท็บใหม่
+  document.querySelectorAll('.video-trigger').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      // ปล่อยให้ ctrl/cmd/middle-click เปิดแท็บใหม่ตามปกติ
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      openVideo(link.getAttribute('href'));
     });
   });
 
   function closeLb() {
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.pause();
   }
+  lbVideo.addEventListener('click', (e) => e.stopPropagation()); // กดคุมวิดีโอไม่ให้ปิดกล่อง
   lb.addEventListener('click', closeLb);                 // กดที่ไหนก็ปิด
   document.addEventListener('keydown', (e) => {          // กด Esc ก็ปิด
     if (e.key === 'Escape') closeLb();

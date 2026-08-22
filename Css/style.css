@@ -206,6 +206,7 @@ section img, .award-img{cursor:zoom-in}
 #lightbox{position:fixed;inset:0;background:rgba(3,3,9,.92);z-index:300;display:none;align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
 #lightbox.open{display:flex}
 #lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.7)}
+#lightbox video{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.7);display:none;background:#000;cursor:default}
 #lightbox .lb-close{position:absolute;top:18px;right:26px;color:#fff;font-size:1.6rem;cursor:pointer;opacity:.7}
 #lightbox .lb-close:hover{opacity:1}
 
