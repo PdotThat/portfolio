@@ -59,25 +59,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(3,3,9,.8);bac
 .nav-links a:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
 .nav-toggle{display:none}
 
-/* ===== SEARCH ===== */
-.nav-actions{display:flex;align-items:center;gap:10px}
-.search-toggle{display:flex;align-items:center;justify-content:center;width:34px;height:34px;background:none;border:1px solid var(--line);border-radius:8px;color:var(--muted);cursor:pointer;transition:color .2s,border-color .2s;padding:0}
-.search-toggle:hover,.search-toggle:focus-visible,.search-toggle[aria-expanded="true"]{color:var(--cyan);border-color:var(--cyan);outline:none}
-.search-bar{max-height:0;overflow:hidden;transition:max-height .25s ease;border-top:0 solid var(--line)}
-.search-bar.open{max-height:160px;border-top:1px solid var(--line)}
-.search-bar form{max-width:1140px;margin:0 auto;padding:14px 24px 0;display:flex;gap:10px}
-#search-input{flex:1;min-width:0;background:var(--glass);border:1px solid var(--line);border-radius:10px;padding:10px 14px;color:var(--ink);font-family:'Sarabun',sans-serif;font-size:.92rem}
-#search-input:focus{outline:none;border-color:var(--cyan)}
-#search-input::placeholder{color:var(--muted)}
-.search-bar button[type="submit"]{background:linear-gradient(90deg,var(--cyan),var(--violet));color:#030309;border:none;border-radius:10px;padding:10px 20px;font-weight:600;cursor:pointer;font-family:'Prompt',sans-serif;font-size:.85rem;white-space:nowrap}
-.search-msg{max-width:1140px;margin:0 auto;padding:8px 24px 14px;font-size:.78rem;color:var(--muted)}
-.search-hit{animation:searchPulse 1.6s ease}
-@keyframes searchPulse{
-  0%{box-shadow:0 0 0 0 rgba(94,230,208,.85)}
-  70%{box-shadow:0 0 0 16px rgba(94,230,208,0)}
-  100%{box-shadow:0 0 0 0 rgba(94,230,208,0)}
-}
-
 /* ===== HERO / SOLAR SYSTEM ===== */
 .hero-space{position:relative;z-index:1;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;max-width:1220px;margin:0 auto;padding:96px 24px 60px}
 .hero-copy h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:700;background:linear-gradient(90deg,#fff 30%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}

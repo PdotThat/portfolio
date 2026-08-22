@@ -1,7 +1,7 @@
 /* =========================================================
    Phatpicha · Portfolio — main.js (v3)
    1) Loading screen   2) Starfield        3) Scroll reveal
-   4) Lightbox         5) Photo carousel   6) Search
+   4) Lightbox         5) Photo carousel
    ========================================================= */
 
 // ---------- 1) LOADER ----------
@@ -90,12 +90,6 @@
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    const searchBar = document.getElementById('search-bar');
-    const searchToggle = document.querySelector('.search-toggle');
-    if (open && searchBar && searchToggle) {
-      searchBar.classList.remove('open');
-      searchToggle.setAttribute('aria-expanded', 'false');
-    }
   });
 
   links.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
@@ -199,94 +193,5 @@ function updateCount(container, index, total) {
       if (e.key === 'ArrowLeft')  { moveSlide(-1, container.querySelector('.prev-btn')); }
       if (e.key === 'ArrowRight') { moveSlide( 1, container.querySelector('.next-btn')); }
     });
-  });
-})();
-
-// ---------- 6) SEARCH (พิมพ์ค้นหา แล้วเลื่อนไปที่หัวข้อนั้น) ----------
-(function () {
-  const toggle = document.querySelector('.search-toggle');
-  const bar = document.getElementById('search-bar');
-  const form = document.getElementById('search-form');
-  const input = document.getElementById('search-input');
-  const msg = document.getElementById('search-msg');
-  if (!toggle || !bar || !form || !input || !msg) return;
-
-  function openBar() {
-    bar.classList.add('open');
-    toggle.setAttribute('aria-expanded', 'true');
-    setTimeout(() => input.focus(), 200);
-  }
-  function closeBar() {
-    bar.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-
-  toggle.addEventListener('click', () => {
-    bar.classList.contains('open') ? closeBar() : openBar();
-    const links = document.getElementById('nav-links');
-    const navToggle = document.querySelector('.nav-toggle');
-    if (links && links.classList.contains('open') && navToggle) {
-      links.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && bar.classList.contains('open')) closeBar();
-  });
-
-  // รวบรวม "หัวข้อ" ที่ค้นหาได้ทั้งหมดในหน้า (การ์ดโปรเจกต์, กิจกรรม, ใบเซอร์, ทักษะ ฯลฯ)
-  function buildIndex() {
-    const groups = [
-      { sel: '.sec-head', head: 'h2' },
-      { sel: '#projects .proj', head: 'h3' },
-      { sel: '#activities .award', head: 'h3' },
-      { sel: '#certs .cert', head: 'b' },
-      { sel: '#experience .tl-item', head: 'h3' },
-      { sel: '#skills .skill' },
-      { sel: '#contact' }
-    ];
-    const items = [];
-    groups.forEach((g) => {
-      document.querySelectorAll(g.sel).forEach((el) => {
-        const headEl = g.head ? el.querySelector(g.head) : el;
-        const title = (headEl ? headEl.textContent : el.textContent).trim();
-        if (!title) return;
-        items.push({ el, title, text: el.textContent.trim().toLowerCase() });
-      });
-    });
-    return items;
-  }
-  const index = buildIndex();
-
-  function highlight(el) {
-    el.classList.remove('search-hit');
-    void el.offsetWidth; // รีสตาร์ท animation
-    el.classList.add('search-hit');
-    setTimeout(() => el.classList.remove('search-hit'), 1700);
-  }
-
-  function runSearch(raw) {
-    const query = raw.trim().toLowerCase();
-    if (!query) return;
-
-    const lowerTitle = (it) => it.title.toLowerCase();
-    const match =
-      index.find((it) => lowerTitle(it) === query) ||
-      index.find((it) => lowerTitle(it).startsWith(query)) ||
-      index.find((it) => lowerTitle(it).includes(query)) ||
-      index.find((it) => it.text.includes(query));
-
-    if (match) {
-      match.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      highlight(match.el);
-      msg.textContent = 'พบ: ' + match.title;
-    } else {
-      msg.textContent = 'ไม่พบผลลัพธ์สำหรับ "' + raw.trim() + '"';
-    }
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    runSearch(input.value);
   });
 })();
