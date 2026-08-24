@@ -115,19 +115,41 @@
   if (!lb) return;
   const lbImg = lb.querySelector('img');
   const lbVideo = document.getElementById('lb-video');
+  const lbPrev = lb.querySelector('.lb-prev');
+  const lbNext = lb.querySelector('.lb-next');
+  const lbCount = lb.querySelector('.lb-count');
 
-  function openImage(src, alt) {
+  let gallery = [];       // รูปทั้งหมดในสไลด์เดียวกับรูปที่กด (เลื่อนได้ในไลท์บ็อกซ์)
+  let galleryIndex = 0;
+
+  function showImage(i) {
+    if (!gallery.length) return;
+    galleryIndex = (i + gallery.length) % gallery.length;
+    const img = gallery[galleryIndex];
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lb.classList.toggle('multi', gallery.length > 1);
+    if (gallery.length > 1) lbCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
+  }
+
+  function openImage(clickedImg) {
     lbVideo.pause();
     lbVideo.removeAttribute('src');
     lbVideo.style.display = 'none';
-    lbImg.src = src;
-    lbImg.alt = alt || '';
     lbImg.style.display = 'block';
+
+    // ถ้ารูปอยู่ในการ์ดสไลด์ ให้รวมทุกรูปในสไลด์นั้นเป็นแกลเลอรีเดียว เลื่อนได้ในไลท์บ็อกซ์
+    const carousel = clickedImg.closest('.carousel-container');
+    gallery = carousel ? Array.from(carousel.querySelectorAll('.carousel-slide img')) : [clickedImg];
+    showImage(gallery.indexOf(clickedImg));
+
     lb.classList.add('open');
     document.body.style.overflow = 'hidden';   // ล็อกสกอลล์ตอนเปิด
   }
 
   function openVideo(src) {
+    gallery = [];
+    lb.classList.remove('multi');
     lbImg.style.display = 'none';
     lbVideo.style.display = 'block';
     lbVideo.src = src;
@@ -139,7 +161,7 @@
   // ดักจับรูปทั้งหมดใน panel (รวมรูปในสไลด์) ยกเว้นรูปดวงอาทิตย์ตรง hero
   const imgs = document.querySelectorAll('.panel img');
   imgs.forEach((img) => {
-    img.addEventListener('click', () => openImage(img.src, img.alt));
+    img.addEventListener('click', () => openImage(img));
   });
 
   // ดักจับลิงก์วิดีโอ ให้เปิดดูในหน้าเดียวกันแทนที่จะเด้งไปแท็บใหม่
@@ -158,10 +180,25 @@
     lbVideo.pause();
   }
   lbVideo.addEventListener('click', (e) => e.stopPropagation()); // กดคุมวิดีโอไม่ให้ปิดกล่อง
+  lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showImage(galleryIndex - 1); });
+  lbNext.addEventListener('click', (e) => { e.stopPropagation(); showImage(galleryIndex + 1); });
   lb.addEventListener('click', closeLb);                 // กดที่ไหนก็ปิด
-  document.addEventListener('keydown', (e) => {          // กด Esc ก็ปิด
+  document.addEventListener('keydown', (e) => {          // กด Esc ปิด, ลูกศรเลื่อนรูป
+    if (!lb.classList.contains('open')) return;
     if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft' && gallery.length > 1) showImage(galleryIndex - 1);
+    if (e.key === 'ArrowRight' && gallery.length > 1) showImage(galleryIndex + 1);
   });
+
+  // ปัดซ้าย-ขวาเพื่อเลื่อนรูปบนมือถือ
+  let touchStartX = null;
+  lb.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    if (touchStartX === null || gallery.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) showImage(galleryIndex + (dx < 0 ? 1 : -1));
+    touchStartX = null;
+  }, { passive: true });
 })();
 
 // ---------- 5) CAROUSEL (สไลด์รูปภาพ) ----------
