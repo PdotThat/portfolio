@@ -146,10 +146,9 @@
       <article class="glass proj">
         <div class="proj-body">
           <h3 style="color:var(--cyan);">Secure Static Portfolio on AWS</h3>
-          <p><strong>Status:</strong> <span class="mono" style="color:var(--gold);">IN PROGRESS</span></p>
-          <p><strong>Technologies / Tools:</strong> AWS S3, CloudFront, OAC, HTTPS, HTML/CSS/JS</p>
+          <p><strong>Technologies / Tools:</strong> AWS S3, IAM, OAC, AWS Budgets, Cloudflare, Git-based CI/CD</p>
           <p><strong>My Role / Contribution:</strong> Cloud Architect / Developer</p>
-          <p style="margin-top:8px;"><strong>Description:</strong> Migrating a static portfolio website from GitHub Pages to AWS. The architecture utilizes Amazon S3 for storage and Amazon CloudFront for content delivery, enforcing HTTPS and Origin Access Control (OAC) for secure, least-privilege access.</p>
+          <p style="margin-top:8px;"><strong>Description:</strong> Deployed this portfolio to a private Amazon S3 bucket with public access fully blocked, architected for CloudFront with Origin Access Control so that only the CDN can read the origin. Secured the account with MFA and a zero-spend budget alert. The live site is delivered over a global CDN with automatic deployments on every Git push and enforced HTTPS.</p>
         </div>
       </article>
 
